@@ -1,23 +1,61 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
+import Appoint from './component/Appoint/Appoint';
+import Contact from './component/Contact/Contact';
+import Details from './component/Details/Details';
+import Footer from './component/Footer/Footer';
+import Header from './component/Header/Header';
+import Home from './component/Home/Home';
+import Login from './component/Login/Login';
+import Notfound from './component/Notfound/Notfound';
+import Reg from './component/Reg/Reg';
+import Video from './component/Video/Video';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Header></Header> 
+      <br /> <br /> <br /> <br />
+      <Switch>
+        <Route exact path= "/">
+          <Home></Home>
+
+        </Route>
+
+        <Route path = "/home">
+          <Home></Home>
+        </Route>
+        <Route path = "/doc">
+          <Video></Video>
+        </Route>
+        
+        <Route path = "/appoint">
+          <Appoint></Appoint>
+        </Route>
+        <Route path = "/contact">
+          <Contact></Contact>
+        </Route>
+        <Route path = "/login">
+          <Login></Login>
+        </Route>
+        <Route path = "/reg">
+          <Reg></Reg>
+        </Route>
+        <Route path = "/details">
+          <Details></Details>
+        </Route>
+        <Route exact path = "*">
+          <Notfound></Notfound>
+        </Route>
+
+      
+
+      </Switch>
+      </BrowserRouter>
+      <br /> <br /> <br /> <br />
+    <Footer></Footer>
     </div>
   );
 }
