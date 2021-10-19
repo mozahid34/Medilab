@@ -4,7 +4,7 @@
 ### Doctor Appointment
 ### Emergency Service
 ### Digonistic
-### Telimedicine
+### Telemedicine
 ### Pharmacy Service
 ### Help Line
 
